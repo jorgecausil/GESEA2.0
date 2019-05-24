@@ -1,0 +1,25 @@
+{% extends 'admin/login.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block extrastyle %}
+
+    <style>
+        #header {
+
+        background-color: #fff !important;
+
+        }
+
+
+    </style>
+{% endblock %}
+
+{% block branding %}
+    <div class="suit-login-graphic">
+        <img style="width: 178px"  class="logo-menu" src="{% static 'assets/images/logo.png'%}" alt="logo">
+    </div>
+
+    <h3>Logín</h3>
+
+{% endblock %}

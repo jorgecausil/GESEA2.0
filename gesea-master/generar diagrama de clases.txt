@@ -1,0 +1,1 @@
+python manage.py graph_models -a -I Inscripcion,AsistenciaEstudiante,Estudiantes,RegistroActividad,Programacion,Programa,Area,Actividad,Lugar,Instructor,DiaActividad,Horario,User,Group,Permission -o diagrama-clases.png
