@@ -183,16 +183,12 @@
         decrementButton.prop( 'disabled', false );
       }
 
-      var numero_max_horas = {{h.get_time_diff}};
-
-      if (stepperNumber > numero_max_horas){
-
+      var numero_max_horas = {{h.get_time_diff}}
+      print (numero_max_horas)
+      if(stepperNumber > numero_max_horas){
            stepperInput.val( numero_max_horas );
-           incrementButtom.prop('disabled', true)
+           incrementButtom.prop('disabled', true);
       }
-
-
-
 
     },
 

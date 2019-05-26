@@ -113,27 +113,20 @@ def listado_asistencia(request, is_refresh=None):
 
 
 def get_day_hours(p):
+    print (get_current_day_name())
+    current_day_horario = p.Dia_semana.filter(Dia_Actividad=get_current_day_name()).values('Horario__id')
 
-    # print (get_current_day_name())
-    print (p)
-    Dia_Actividad=get_current_day_name()
-    print (Dia_Actividad)
-    print (p.Dia_semana)
-    current_day_horario = p.Dia_semana.filter(Dia_Actividad=get_current_day_name()).values()
-    # print(current_day_horario)
     try:
 
-        horario_id =  current_day_horario[0]['Horario_id']
-        print (horario_id)
-        h = Horario.objects.get(id=horario_id)
+        horario_id =  current_day_horario[0]['Horario__id']
 
+        h = Horario.objects.get(id=horario_id)
 
     except IndexError:
 
         h = None
 
     return h
-
 
 def get_current_day_name():
 
@@ -153,7 +146,5 @@ def get_current_day_name():
         current_day = 'SABADO'
     elif now().strftime("%w") == '7':
         current_day = 'DOMINGO'
-
-    print (now().strftime("%w"))
 
     return current_day

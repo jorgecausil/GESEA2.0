@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Programacion,Lugar,Horario,DiaActividad
 from inscripcion.models import Inscripcion
+from actividades.models import Actividad
+
 
 class Horarios (admin.ModelAdmin):
 	list_display = ['Hora_Inicio','Hora_Final']
@@ -18,12 +20,15 @@ class Dia_Semana (admin.ModelAdmin):
 		model = DiaActividad
 
 class ThingInline(admin.TabularInline):
+
 	model = Inscripcion
 	min_num = 0
 	extra = 0
 	raw_id_fields = ('estudiante',)
 	verbose_name_plural = 'Estudiantes Inscritos'
 	suit_form_inlines_hide_original = True
+
+
 
 class Programaciones (admin.ModelAdmin):
 
